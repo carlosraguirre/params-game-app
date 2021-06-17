@@ -1,5 +1,5 @@
 class ParamsController < ApplicationController
-  
+
   def params_game
     first_name = params[:the_first_name].upcase
     first_letter - first_name[0]
@@ -22,5 +22,16 @@ class ParamsController < ApplicationController
       message = "you are correct"
     end
     render json: {message: message}
+  end
+
+  def url_segment_param
+    user_guess = params[:user_input].to_i
+    if user_guess > 36
+      render json: {message: "too high"}
+    elsif user_guess < 36
+      render json: {message: "too low"}
+    elsif user_guess == 36
+      render json: {message: "you're right"}
+    end
   end
 end

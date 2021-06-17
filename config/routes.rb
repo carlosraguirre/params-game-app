@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get "/params_game", controller: "params", action: "params_game"
 
   get "/params_number_game", controller: "params", action: "params_number_game"
+
+  get "/segment_parameter/:user_input", controller: "params", action: "url_segment_param"
 end
