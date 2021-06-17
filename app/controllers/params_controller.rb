@@ -34,4 +34,8 @@ class ParamsController < ApplicationController
       render json: {message: "you're right"}
     end
   end
+
+  def example
+    render json: {message: 'hello'}
+  end
 end
