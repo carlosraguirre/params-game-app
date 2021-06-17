@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   get "/segment_parameter/:user_input", controller: "params", action: "url_segment_param"
 
-  post '/body_params_example', controller: 'params', action: 'example'
+  post '/body_params_number', controller: 'params', action: 'guess_number_body_params'
 end

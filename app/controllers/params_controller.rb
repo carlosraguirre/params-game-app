@@ -35,7 +35,14 @@ class ParamsController < ApplicationController
     end
   end
 
-  def example
-    render json: {message: 'hello'}
+  def guess_number_body_params
+    the_guess = params[:user_guess].to_i
+    if the_guess > 36
+      render json: {message: "too high"}
+    elsif the_guess < 36
+      render json: {message: "too low"}
+    elsif the_guess == 36
+      render json: {message: "you're right"}
+    end
   end
 end
